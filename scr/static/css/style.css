@@ -1,0 +1,14 @@
+header{
+    min-height: 5vh;
+}
+body{
+    min-height: 90vh;
+}
+footer{
+    min-height: 5vh;
+}
+
+body #content{
+    min-height: 90vh;
+    padding: 50px;
+}

@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "base.html"%}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
+{% block title %}Home{% endblock %}
 
-<body>
-    <h1>Rota da página de Home da nossa WEB APP</h1>
-    <h2>@Alanldf - Alan Cavalheiro de Souza</h2>
-</body>
+{% block content %}
 
-</html>
+    <h1>Home</h1>
+    <p class="important">Seja bem vindo!</p>
+
+    <ul>
+        <li><a href="{{ url_for('index.formIndex') }}">Home</a></li>
+        <li><a href="{{ url_for('funcionario.formListaFuncionario') }}">Funcionario</a></li>
+        <li><a href="{{ url_for('cliente.formListaCliente') }}">Cliente</a></li>
+        <li><a href="{{ url_for('produto.formListaProduto') }}">Produto</a></li>
+
+    </ul>
+
+{% endblock %}

@@ -1,14 +1,40 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "base.html"%}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Produtos</title>
-</head>
+{% block title %}Produtos{% endblock %}
 
-<body>
-    <h1>Rota da página de Produtos da nossa WEB APP</h1>
-    <h2>@Alanldf - Alan Cavalheiro de Souza</h2>
-</body>
+{% block content %}
 
-</html>
+<form action="{{ url_for('produto.formProduto') }}" method="GET">
+    <div class="row">
+        <h1 class="col-10">Produtos</h1>
+        <button type="submit" name="formNovo" class="btn btn-success col-2">Novo Produto</button>    
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Grupo</th>
+            <th scope="col">Senha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">...</th>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td>...</td>
+            <td><i class="fas fa-edit"></i></td>
+            <td><i class="fas fa-trash"></i></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}
