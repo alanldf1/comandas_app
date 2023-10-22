@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Cadastro Cliente{% endblock %}
+{% block content %}
+<form name="register-customer" id="register-customer" action="" method="POST">
+    <h1>Cliente</h1>
+    <input class="form-control" type="text" name="name" id="name" value="" placeholder="Ex.: Patrick" maxlength="100" autofocus required>
+    <label class="form-label" for="name">Nome cliente*: </label>
+    <br>
+    <input class="form-control" type="text" name="cpf" id="cpf" value="" placeholder="CPF" maxlength="15" required>
+    <label class="form-label" for="cpf">CPF*: </label>
+    <br>
+    <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Ex.: (49)99999-8888" maxlength="15" required>
+    <label class="form-label" for="phone" class="form-label">Telefone*: </label>
+    <br>
+    <input class="form-control" type="password" name="password" id="password" value="Bolinhas" placeholder="******" required>
+    <label class="form-label" for="password">Senha*: </label>
+    <br>
+    <input class="form-control" type="password" name="repassword" id="repassword" value="Bolinhas" placeholder="******" required>
+    <label class="form-label" for="repassword">Confirmação da senha*: </label>
+    <br>
+    <button class="btn btn-primary" type='submit' name='save-customer' id='save-customer'><i class='fas fa-save'></i> Salvar</button>
+</form>
+{% endblock %}

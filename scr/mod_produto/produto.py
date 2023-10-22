@@ -1,3 +1,6 @@
+import requests 
+from settings import HEADERS_API, ENDPOINT_PRODUTO
+
 from flask import Blueprint, render_template
 bp_produto = Blueprint('produto', __name__, url_prefix="/produto", template_folder='templates')
 
@@ -5,6 +8,11 @@ bp_produto = Blueprint('produto', __name__, url_prefix="/produto", template_fold
 @bp_produto.route('/')
 def formListaProduto():
     return render_template('formListaProduto.html'), 200
+
+@bp_produto.route('/cadastro/', methods=['GET'])
+def formProduto():
+    return render_template('formProduto.html')
+
 
 '''
 Rota antiga de app...
