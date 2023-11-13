@@ -36,7 +36,14 @@
             <td>{{ row['compra_fiado'] }}</td>
             <td>{{ row['dia_fiado'] }}</td>
             <td>{{ row['senha'] }}</td>
-            <td><i class="fas fa-edit"></i></td>
+            <td>
+                <form action="{{ url_for('cliente.formEditCliente') }}" method="POST" name="formEdit{{ row['id_cliente'] }}">
+
+                    <input type="hidden" name="id" value="{{ row['id_cliente'] }}">
+                    <button type="submit" name="formEditCliente"> <i class="fas fa-edit"></i></button>
+
+                </form>
+            </td>
             <td><i class="fas fa-trash"></i></td>
         </tr>
         {% endfor %}

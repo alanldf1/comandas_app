@@ -15,26 +15,37 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Nome</th>
-            <th scope="col">Matricula</th>
-            <th scope="col">CPF</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Grupo</th>
-            <th scope="col">Senha</th>
+            <th scope="col">Descricao</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Valor unitário</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
+
+        {% if result %}
+        {% for row in result %}
         <tr>
-            <th scope="row">...</th>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td>...</td>
-            <td><i class="fas fa-edit"></i></td>
+            <th scope="row"> {{ row['id_produto'] }}</th>
+            <td>{{ row['nome'] }}</td>
+            <td>{{ row['descricao'] }}</td>
+            <td><img style="width: 50px; height: 50px;"src="{{ row['foto'] }}" alt=""></td>
+            <td>{{ row['valor_unitario'] }}</td>
+            <td>
+                <form action="{{ url_for('produto.formEditProduto') }}" method="POST" name="formEdit{{ row['id_produto'] }}">
+
+                    <input type="hidden" name="id" value="{{ row['id_produto'] }}">
+                    <button type="submit" name="formEditProduto"> <i class="fas fa-edit"></i></button>
+
+                </form>
+            </td>            
             <td><i class="fas fa-trash"></i></td>
         </tr>
+        {% endfor %}
+        {% endif %}
     </tbody>
 </table>
 
 {% endblock %}
+
