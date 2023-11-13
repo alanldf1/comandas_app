@@ -8,9 +8,7 @@
 (function ($, PATH, Helpers) {
 
     masks = function(){
-        Helpers.numberMask($('#matriculation'));
-        Helpers.phoneMask($('#phone'));
-        Helpers.cpfMask($('#cpf'));
+        Helpers.moneyMask($('#valor-unitario'));
     }
    
 

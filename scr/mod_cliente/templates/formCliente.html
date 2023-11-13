@@ -1,23 +1,64 @@
 {% extends "base.html" %}
 {% block title %}Cadastro Cliente{% endblock %}
+
+{# ajusta as variáveis conforme novo ou edit #}
+{% set id = result[0].id_cliente if result else '0' %}
+{% set nome = result[0].nome if result else '' %}
+{% set cpf = result[0].cpf if result else '' %}
+{% set telefone = result[0].telefone if result else '' %}
+{% set compra_fiado = result[0].compra_fiado if result else '' %}
+{% set dia_fiado = result[0].dia_fiado if result else '' %}
+{% set senha = result[0].senha if result else '' %}
+
+
+
 {% block content %}
-<form name="register-customer" id="register-customer" action="" method="POST">
-    <h1>Cliente</h1>
-    <input class="form-control" type="text" name="name" id="name" value="" placeholder="Ex.: Patrick" maxlength="100" autofocus required>
-    <label class="form-label" for="name">Nome cliente*: </label>
-    <br>
-    <input class="form-control" type="text" name="cpf" id="cpf" value="" placeholder="CPF" maxlength="15" required>
-    <label class="form-label" for="cpf">CPF*: </label>
-    <br>
-    <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Ex.: (49)99999-8888" maxlength="15" required>
-    <label class="form-label" for="phone" class="form-label">Telefone*: </label>
-    <br>
-    <input class="form-control" type="password" name="password" id="password" value="Bolinhas" placeholder="******" required>
-    <label class="form-label" for="password">Senha*: </label>
-    <br>
-    <input class="form-control" type="password" name="repassword" id="repassword" value="Bolinhas" placeholder="******" required>
-    <label class="form-label" for="repassword">Confirmação da senha*: </label>
-    <br>
-    <button class="btn btn-primary" type='submit' name='save-customer' id='save-customer'><i class='fas fa-save'></i> Salvar</button>
+
+<form name="register-customer" id="register-customer" action="{{ url_for('cliente.insert') }}" method="POST">
+<form name="{{ 'edit-customer' if result else 'register-customer' }}" id="{{ 'edit-customer' if result else 'register-customer' }}" action="{{ url_for('cliente.edit') if result else url_for('cliente.insert') }}" method="POST">
+
+    <h1>Cliente - {{ "%s: %s" % ('Editar Registro', id) if result else 'Novo' }}</h1>
+     
+    <div class="my-2">
+        <label class="form-label" for="id">Código*: </label>
+        <input class="form-control" type="text" name="id" id="id" value="{{ id }}" placeholder="01" maxlength="100" autofocus required>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="nome">Nome Cliente*: </label>
+        <input class="form-control" type="text" name="nome" id="nome" value="{{ nome }}" placeholder="Ex.: Patrick" maxlength="100" autofocus required>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="cpf">CPF*: </label>
+        <input class="form-control" type="text" name="cpf" id="cpf" value="{{ cpf }}" placeholder="EX.: 000.000.000-00" maxlength="15" required>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="telefone" class="form-label">Telefone*: </label>
+        <input class="form-control" type="text" name="telefone" id="telefone" value="{{ telefone }}" placeholder="Ex.: (49)99999-8888" maxlength="15" required>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="compra-fiado">Compra fiado?*: </label>
+        <select class="form-select" name="compra-fiado" id="compra-fiado" aria-label="Grupo">
+            <option value="0" {{ 'selected' if compra_fiado == 0 else '' }}>Não</option>
+            <option value="1" {{ 'selected' if compra_fiado == 1 else '' }}>Sim</option>
+        </select>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="dia-fiado" class="form-label">Dia fiado*: </label>
+        <input class="form-control" type="text" name="dia-fiado" id="dia-fiado" value="{{ dia_fiado }}" placeholder="10" maxlength="2" required>    
+    </div>
+
+    <div class="my-2">
+        <label class="form-label" for="senha">Senha*: </label>
+        <input class="form-control" type="password" name="senha" id="senha" placeholder="******" value="{{ senha }}"required>    
+    </div>
+    <div class="my-2">
+        <label class="form-label" for="resenha">Confirmação da senha*: </label>
+        <input class="form-control" type="password" name="resenha" id="resenha" placeholder="******" required>    
+    </div>
+    <button class="btn btn-primary" class="btn btn-primary" type='submit' name='save-employee' id='save-employee'>Salvar</button>
 </form>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/cliente/cliente.js') }}"></script>
 {% endblock %}

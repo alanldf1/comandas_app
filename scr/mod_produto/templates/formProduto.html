@@ -1,36 +1,42 @@
 {% extends "base.html" %}
 {% block title %}Cadastro Produto{% endblock %}
+
+{# ajusta as variáveis conforme novo ou edit #}
+{% set id = result[0].id_produto if result else '0' %}
+{% set nome = result[0].nome if result else '' %}
+{% set descricao = result[0].descricao if result else '' %}
+{% set valor_unitario = result[0].valor_unitario if result else '' %}
+
 {% block content %}
-<h1>Produto</h1>
-<form name="register-produto" id="register-produto" action="" method="POST" class="needs-validate" novalidate>
+<!-- <form name="register-product" id="register-product" action="{{ url_for('produto.insert') }}" method="POST" enctype="multipart/form-data"> -->
+<form name="{{ 'edit-product' if result else 'register-product' }}" id="{{ 'edit-product' if result else 'register-product' }}" action="{{ url_for('produto.edit') if result else url_for('produto.insert') }}" method="POST">
+
+    <h1>Produto - {{ "%s: %s" % ('Editar Registro', id) if result else 'Novo' }}</h1>
+
+    <div class="my-2">
+        <label class="form-label" for="name">Código*: </label>
+        <input class="form-control" type="text" name="id" id="id" value="{{ id }}" placeholder="01" maxlength="100" autofocus required>    
+    </div>
     <div class="my-2">
         <label class="form-label" for="nome">Nome Produto*: </label>
-        <input class="form-control" type="text" name="name" id="name" value="" placeholder="EX.: Alan de Souza" maxlength="100" autofocus required>
-        <div class="invalid-feedback">
-            Por favor, preencha o nome do produto.
-        </div>
+        <input class="form-control" type="text" name="nome" id="nome" value="{{ nome }}" placeholder="EX.: Alan de Souza" maxlength="100" autofocus required>
     </div>
     <div class="my-2">
         <label class="form-label" for="descricao">Descrição*: </label>
-        <textarea class="form-control" name="description" id="description" rows="5"></textarea>
-        <div class="invalid-feedback">
-            Por favor, preencha a descrição do Produto.
-        </div>
+        <textarea class="form-control" name="descricao" id="descricao" rows="5">{{ descricao }}</textarea>
     </div>
     <div class="my-2">
         <label class="form-label" for="telefone" class="form-label">Foto*: </label>
-        <input class="form-control" type="file" name="photo" id="photo" value="" placeholder="Insira a imagem" required>
-        <div class="invalid-feedback">
-            Por favor, insira uma foto do produto.
-        </div>
+        <input class="form-control" type="file" name="foto" id="foto" value="" placeholder="Insira a imagem" required>
     </div>
     <div class="my-2">
         <label class="form-label" for="value" class="form-label">Valor do produto*: </label>
-        <input class="form-control" type="text" name="value" id="value" value="" placeholder="Ex.: R$5,50" maxlength="10" required>
-        <div class="invalid-feedback">
-            Por favor, preencha o valor do produto.
-        </div>
+        <input class="form-control" type="text" name="valor-unitario" id="valor-unitario" value="{{ valor_unitario }}" placeholder="Ex.: R$5,50" maxlength="10" required>
     </div>
     <button class="btn btn-primary" type='submit' name='save-product' id='save-product'>Salvar</button>
 </form>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/produto/produto.js') }}"></script>
 {% endblock %}
