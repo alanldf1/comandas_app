@@ -87,7 +87,7 @@ def edit():
         valor_unitario = valor_unitario.replace("R$", "").replace(",", ".")
         valor_unitario = float(valor_unitario)
         # Converte a foto em base64
-        if request.files['foto'].filename!= '' and request.files['foto'].filename is not None:
+        if request.files['foto'].filename != '' and request.files['foto'].filename is not None:
             foto = (
                 "data:"
                 + request.files["foto"].content_type
