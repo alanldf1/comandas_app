@@ -8,8 +8,8 @@
 (function ($, PATH, Helpers) {
 
     masks = function(){
-        Helpers.numberMask($('#matriculation'));
-        Helpers.phoneMask($('#phone'));
+        Helpers.numberMask($('#matricula'));
+        Helpers.phoneMask($('#telefone'));
         Helpers.cpfMask($('#cpf'));
     }
    
