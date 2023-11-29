@@ -1,0 +1,72 @@
+{% extends "baseLogin.html" %}
+{% block title %}Login{% endblock %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login/login.css') }}">
+{% endblock %}
+{% block menu %}
+{% endblock %}
+{% block content %}
+
+<div class="loginAdm" id="content-loginAdm" style="height:100vh;">
+
+    <section class="content h-100">
+        <div class="container">
+            <div class="login col-md-12 row">
+                <div class="img-login col-md-6">
+                    <!-- <img src="{{ url_for('static', filename='img/pizza-bg.png') }}" alt=""> -->
+                </div>
+                <div class="form-login col-md-6 p-5">
+                    <div class="w-100">
+                        <div class="text-left box-logo">
+                            <img src="<?= $url; ?>/assets/img/logo/logo.png" alt="">
+                        </div>
+                        <form class="w-100" action="{{ url_for('login.validaLogin') }}" method="post">
+                            <h3 class="font-regular text-left">Login administrador</h3>
+                            <div class="form-group">
+                                <label class="text-left w-100 font-color">Usuário</label>
+                                <input class="form-control" name="usuario" placeholder="Ex.: Alan"
+                                    type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label class="text-left w-100 font-color">Senha</label>
+                                <div class="pass">
+                                    <input class="form-control" name="senha" id="password" placeholder="****"
+                                        type="password" />
+                                    <div class="reveal-pass pointer">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="form-group">
+                                <label class="text-left w-100 font-color">Senha</label>
+                                <input class="form-control" name="password" placeholder="****" type="password" />
+                            </div> -->
+                            <div class="text-left">
+                                <div id="recover-email" class="font-color-blue recover-password pointer">Recupere sua senha</div>
+                            </div>
+
+                            <input type="submit" class="btn btn-default-blue btn-login my-3" value="Login">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+<!-- <form action="{{ url_for('login.validaLogin') }}" method="post">
+    <input placeholder="CPF" name="usuario" type="text" value="abc">
+    <input placeholder="Senha" name="senha" type="password" value="Bolinhas">
+    <br>
+    <input type="submit" value="Login">
+
+</form> -->
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/login/login.js') }}"></script>
+{% endblock %}

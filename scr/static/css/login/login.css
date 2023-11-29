@@ -1,0 +1,132 @@
+body{
+    background-image: url(../../img/fun-bg-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100%;
+}
+
+
+.form-login, .form-cadastro{
+    display: flex;
+    align-items: center;
+}
+.form-group input, .form-group input:focus, .form-group input:hover, .form-group input:active, .form-group select, .form-group select:focus, .form-group select:hover, .form-group select:active {
+    width: 100%;
+    padding: 10px;
+    color: #767676;
+    border: 1px solid #d7d6d6;
+    height: calc(2em + 0.75rem + 2px)!important;
+    position: relative;
+    border-radius: 10px;
+}
+
+.form-group input:not(:placeholder-shown), .form-group select {
+    color: #767676 !important;
+}
+
+.login{
+    background-color: #ffffff;
+    font-size: 18px;
+    font-family: 'poppins'!important;
+    color: #767676;
+    border-radius: 20px;
+    min-height: 70vh;
+    padding: 15px;
+    width: 100%;
+    z-index:999;
+}
+.login .img-login{
+    background-image: url(../../img/pizza-bg-5.jpg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 0;
+}
+.fa-eye-slash, .fa-eye{
+    cursor: pointer;
+}
+/* .login .pink-filter{
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 38, 143, 0.5);
+    border-radius: 20px;
+} */
+
+.login .form-login{
+    display: flex;
+    align-items: center;
+}
+
+.login .box-logo img{
+    height: 75px;
+}
+
+.login h3{
+    padding: 30px 0;
+}
+
+.pass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pass div{
+    display: flex;
+    justify-content: center;
+    margin: 0 5px;
+    width: 10%;
+}
+
+.btn-pink{
+    margin: 20px 0;
+    width: 100%;
+}
+
+.recover-password{
+    font-size: 16px;
+}
+
+.content{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.have-account{
+    font-size: 15px;
+}
+.link-cadastro{
+    margin-left: 10px;
+    color: #262EEC;
+}
+svg{
+    width: 25px;
+    height: 25px;
+    stroke: #fff;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-login:hover svg{
+    stroke: #4A72FC;
+}
+
+section form p a {
+    font-size: 0.7em;
+    text-decoration: none;
+}
+section form h4 span, section form a {
+    color: #fff;
+}
+section form a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 767px){
+
+    .login{
+        width: 100%;
+    }
+
+}

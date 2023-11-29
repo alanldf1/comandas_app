@@ -5,7 +5,11 @@
 {% block content %}
 
     <h1>Home</h1>
-    <p class="important">Seja bem vindo!</p>
+    <p class="important">
+    {% if 'login' in session %}
+        Bem-vindo <b>{{ session['login'] }}</b>
+    {% endif %}
+    </p>
 
     <ul>
         <li><a href="{{ url_for('index.formIndex') }}">Home</a></li>
