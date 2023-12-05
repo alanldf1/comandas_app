@@ -5,12 +5,13 @@
 {% block content %}
 
 <form action="{{ url_for('funcionario.formFuncionario') }}" method="GET">
-    <div class="row">
-        <h1 class="col-10">Funcionários</h1>
-        <button type="submit" name="formNovo" class="btn btn-success col-2">Novo Funcionário</button>
+    <div class="row mb-3">
+        <h1 class="col-8 montserrat-bold">Funcionários</h1>
+        <button type="submit" name="formNovo" class="btn btn-success col-4">Novo Funcionário</button>
     </div>
 </form>
-<table class="table">
+<div class="table-responsive">
+    <table class="table table-striped table-bordered border-black">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -24,7 +25,7 @@
             <th scope="col"></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
         {% if result %}
         {% for row in result %}
         <tr>
@@ -55,7 +56,7 @@
         {% endif %}
     </tbody>
 </table>
-
+</div>
 {% endblock %}
 
 {% block js %}

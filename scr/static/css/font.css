@@ -1,0 +1,307 @@
+@font-face {
+    font-family: 'poppins';
+    src: url(../libs/fonts/poppins/poppins-regular.ttf);
+}
+@font-face {
+    font-family: 'poppins light';
+    src: url(../libs/fonts/poppins/poppins-light.ttf);
+}
+@font-face {
+    font-family: 'poppins bold';
+    src: url(../libs/fonts/poppins/poppins-bold.ttf);
+}
+@font-face{
+    font-family: 'poppins black';
+    src: url(../libs/fonts/poppins/poppins-black.ttf);
+}
+@font-face {
+    font-family: 'poppins bold italic';
+    src: url(../libs/fonts/poppins/poppins-bolditalic.ttf);
+}
+@font-face {
+    font-family: 'poppins thin';
+    src: url(../libs/fonts/poppins/poppins-thin.ttf);
+}
+@font-face{
+    font-family: 'poppins italic';
+    src: url(../libs/fonts/poppins/poppins-italic.ttf);
+}
+@font-face{
+    font-family: 'poppins medium';
+    src: url(../libs/fonts/poppins/poppins-medium.otf);
+}
+@font-face{
+    font-family: 'poppins semibold';
+    src: url(../libs/fonts/poppins/poppins-semibold.otf);
+}
+
+@font-face{
+    font-family: 'montserrat';
+    src: url(../libs/fonts/montserrat/Montserrat-Regular.ttf);
+}
+@font-face{
+    font-family: 'montserrat bold';
+    src: url(../libs/fonts/montserrat/Montserrat-Bold.ttf);
+}
+@font-face{
+    font-family: 'montserrat light';
+    src: url(../libs/fonts/montserrat/Montserrat-Light.ttf);
+}
+@font-face{
+    font-family: 'montserrat black';
+    src: url(../libs/fonts/montserrat/Montserrat-Black.ttf);
+}
+
+
+.font-regular,
+.font-regular font font{
+    font-family: 'poppins'!important;
+}
+.font-light,
+.font-light font font{
+    font-family: 'poppins light'!important;
+}
+.font-bold,
+.font-bold font font{
+    font-family: 'poppins bold'!important;
+}
+.font-black,
+.font-black font font{
+    font-family: 'poppins black'!important;
+}
+.font-bi,
+.font-bi font font{
+    font-family: 'poppins bold italic'!important;
+}
+.font-thin,
+.font-thin font font{
+    font-family: 'poppins thin'!important;
+}
+.font-italic,
+.font-italic font font{
+    font-family: 'poppins italic'!important;
+}
+.font-semibold,
+.font-semibold font font{
+    font-family: 'poppins semibold'!important;
+}
+.font-medium,
+.font-medium font font{
+    font-family: 'poppins medium'!important;
+}
+
+.montserrat-regular,
+.montserrat-regular font font{
+    font-family: 'montserrat'!important;
+}
+.montserrat-light,
+.montserrat-light font font{
+    font-family: 'montserrat light'!important;
+}
+.montserrat-bold,
+.montserrat-bold font font{
+    font-family: 'montserrat bold'!important;
+}
+.montserrat-black,
+.montserrat-black font font{
+    font-family: 'montserrat black'!important;
+}
+
+.font-color{
+	color: #767676!important;
+}
+.font-color-dark{
+	color: #424242!important;
+}
+.font-color-light{
+	color: #D7D6D6!important;
+}
+.font-color-blue{
+    color: #4A72FC!important;
+}
+.btn-default,
+.btn-default-blue,
+.btn-default-dark-blue,
+.btn-default-green,
+.btn-default-red,
+.btn-default-yellow,
+.btn-default-grey{
+    border-radius: 10px!important;
+    border: 1px solid transparent;
+	color: #fff!important;
+    cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    padding: 10px;
+    min-width: fit-content;
+    transition: .3s all;
+    user-select: none;
+}
+.btn-default-grey{
+    background: #878787;
+}
+.btn-default-grey:hover{
+    background: transparent;
+	color: #878787!important;
+	border: 1px solid #878787;
+}
+
+.btn-default-grey:hover *{
+	color: #878787!important;
+}
+
+.btn-default-blue{
+    background: #ed1b24;
+}
+.btn-default-blue svg{
+    fill: #fff;
+    stroke: transparent;
+}
+
+.btn-default-blue.disabled{
+    background: #b7b7b7;
+    cursor: unset;
+}
+
+.btn-default-blue:not(.disabled):hover{
+    background: transparent;
+	color: #4A72FC!important;
+	border: 1px solid #4A72FC;
+}
+
+.btn-default-blue:not(.disabled):hover *{
+	color: #4A72FC!important;
+}
+
+.btn-default-blue:not(.disabled):hover svg{
+	fill: #4A72FC;
+}
+
+.btn-gradient-blue{
+    background: #3e93e6;
+    background: linear-gradient(90deg, #4a72fc 0%, #3e93e6 100%);
+    border-left: 1px solid #4a72fc;
+    border-right: 1px solid #3e93e6;
+ 
+}
+
+.btn-default-dark-blue{
+    background: #181f58;
+    /* background: linear-gradient(90deg, #181f58 0%, #2B37A3 100%);
+    border-left: 1px solid #2B37A3;
+    border-right: 1px solid #2B37A3; */
+}
+
+.btn-default-dark-blue svg{
+    fill: #fff;
+    stroke: transparent;
+}
+
+.btn-default-dark-blue:hover{
+    background: transparent;
+	border: 1px solid #2B37A3;
+    color: #2B37A3!important;
+}
+
+.btn-default-dark-blue:hover *{
+	color: #2B37A3!important;
+}
+
+.btn-default-dark-blue:hover svg{
+	fill: #2B37A3;
+}
+
+.btn-default-green{
+    background: #21b52d;
+    /* background: linear-gradient(90deg, #308a37 0%, #46ca51 100%);
+    border-left: 1px solid #308a37;
+    border-right: 1px solid #46ca51; */
+}
+
+.btn-default-green svg{
+    fill: #fff;
+    stroke: transparent;
+}
+
+.btn-default-green:hover{
+    background: transparent;
+	border: 1px solid #21b52d;
+    color: #21b52d!important;
+}
+
+.btn-default-green:hover *{
+    color: #21b52d!important;
+}
+
+.btn-default-green:hover svg{
+	fill: #21b52d;
+}
+
+.btn-default-red{
+    background: #ff3333;
+    /* background: linear-gradient(90deg, #ae2222 0%, #ff3333 100%);
+    border-left: 1px solid #ae2222;
+    border-right: 1px solid #ff3333; */
+}
+
+.btn-default-red:hover{
+    background: transparent;
+	color: #ff3333!important;
+	border: 1px solid #ff3333;
+}
+
+.btn-default-red:hover *{
+	color: #ff3333!important;
+}
+
+
+.btn-default-red:hover svg{
+	stroke: #ff3333;
+	fill: #ff3333;
+}
+
+.btn-default-yellow{
+    background: #ffb000;
+    /* background: linear-gradient(90deg, #c98f25 0%, #ffc967 100%);
+    border-left: 1px solid #c98f25;
+    border-right: 1px solid #ffc967; */
+}
+
+.btn-default-yellow:hover{
+    background: transparent;
+	color: #ffb000!important;
+	border: 1px solid #ffb000;
+}
+
+.btn-default-yellow:hover *{
+	color: #ffb000!important;
+}
+
+.btn-default-yellow:hover svg{
+	stroke: #ffb000;
+	fill: #ffb000;
+}
+
+
+.btn-default{
+    background: #a7a7a7;
+    /* background: linear-gradient(90deg, #808080 0%, #a7a7a7 100%);
+    border-left: 1px solid #808080;
+    border-right: 1px solid #a7a7a7; */
+}
+
+.btn-default:hover{
+    background: transparent;
+	color: #a7a7a7!important;
+	border: 1px solid #a7a7a7;
+}
+
+.btn-default:hover *{
+	color: #a7a7a7!important;
+}
+
+.btn-default:hover svg{
+	stroke: #a7a7a7;
+	fill: #a7a7a7;
+}
