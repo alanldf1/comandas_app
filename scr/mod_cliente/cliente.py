@@ -120,6 +120,17 @@ def delete():
         # return render_template('formListaFuncionario.html',
         return jsonify(erro=True, msgErro=e.args[0])
 
+''' rotas para PDF '''
+from mod_cliente.GeraPdf import PDF
+from flask import send_file
+
+@bp_cliente.route('/pdfTodos', methods=['POST'])
+@validaSessao
+def pdfTodos():
+    geraPdf = PDF()
+    geraPdf.listaTodos()
+    return send_file('pdfClientes.pdf')
+
 
 '''
 Rota antiga de app...

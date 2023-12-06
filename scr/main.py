@@ -34,6 +34,7 @@ SESSION_COOKIE_SECURE='True'
 @app.before_request
 def before_request():
     session.permanent = True
+    session.modified = True
     session['tempo'] = int(TEMPO_SESSION)
     # o padrão é 31 dias...
     app.permanent_session_lifetime = timedelta(minutes=session['tempo'])

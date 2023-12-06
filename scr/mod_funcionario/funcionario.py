@@ -110,6 +110,19 @@ def delete():
     except Exception as e:
         # return render_template('formListaFuncionario.html',
         return jsonify(erro=True, msgErro=e.args[0])
+
+
+''' rotas para PDF '''
+from mod_funcionario.GeraPdf import PDF
+from flask import send_file
+
+@bp_funcionario.route('/pdfTodos', methods=['POST'])
+@validaSessao
+def pdfTodos():
+    geraPdf = PDF()
+    geraPdf.listaTodos()
+    return send_file('pdfFuncionarios.pdf')
+
 '''
 Rota antiga de app...
 @app.route('/funcionario/')

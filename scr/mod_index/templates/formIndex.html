@@ -7,7 +7,8 @@
     <h1 class="montserrat-bold">Home</h1>
     <p class="important">
     {% if 'login' in session %}
-        Bem-vindo <b>{{ session['login'] }}</b>
+        Bem-vindo <b>{{ session['login'] }}</b> <br>
+        grupo: <b>{{ session['grupo'] }}</b>
     {% endif %}
     </p>
 

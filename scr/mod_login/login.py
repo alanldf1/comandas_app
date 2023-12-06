@@ -47,6 +47,15 @@ def validaLogin():
                 sessionStatus = "true"
                 session['login'] = user
 
+                if (funcionario['grupo'] == 0):
+                    session['grupo'] = "atendentes"
+                elif (funcionario['grupo'] == 1):
+                    session['grupo'] = "caixas"
+                else:
+                    session['grupo'] = "administradores"
+
+
+
                 # abre a aplicação na tela home
                 return redirect(url_for('index.formIndex'))
                 break  # Para a execução do loop após encontrar a correspondênci
@@ -71,6 +80,7 @@ def logoff():
 
     # limpa um valor individual
     session.pop('login', None)
+    session.pop('grupo', None)
 
     # limpa toda sessão
     session.clear()
